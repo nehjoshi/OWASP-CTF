@@ -57,17 +57,26 @@ body {
 }
 table {
     margin: 10px auto;
-    width: 97% !important;
-
+    width: 90% !important;
+     @media  screen and (max-width:420px) {
+         width: 98% !important;
+     }
+     font-size: 1.3rem;
+     @media screen and (max-width: 690px){
+        .fa-trophy, .fa-piggy-bank {
+            display: none;
+        }
+     }
+     
 }
 .headers {
     height: 100px;
+    background: rgb(11, 11, 41) !important;
     
     th {
         padding-bottom: 30px !important;
-        border-right: 2px solid red;
+        
         font-size: 1.3rem;
-        text-align: center;
         @media screen and (max-width: 420px){
             font-size: 0.8rem;
         }
@@ -81,12 +90,36 @@ table {
     }
 }
 td, th {
-    border-right: 2px solid red;
-    text-align: center;
+ 
     @media screen and (max-width: 420px){
         font-size: 0.8rem;
+        
+    }
+    @media screen and (max-width: 340px){
+        font-size: 0.7rem;
+    }
+    @media screen and (max-width: 300px){
+        font-size: 0.5rem;
+        img {
+            height: 30px !important;
+        }
+
     }
 }
+tbody {
+    background: rgb(11, 11, 41) !important;
+}
 tbody tr:hover {
-    background-color: rgb(40, 45, 49) !important;
+    background-color: rgb(23, 23, 48) !important;
+}
+
+.to-center {
+    border-right: none !important;
+    text-align: center !important;
+}
+.fa-chess-knight {
+    height: 40px;
+    @media screen and (max-width: 300px){
+        height: auto !important; 
+    }
 }

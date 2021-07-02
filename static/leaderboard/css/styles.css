@@ -66,18 +66,30 @@ body {
 
 table {
   margin: 10px auto;
-  width: 97% !important;
+  width: 90% !important;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 420px) {
+  table {
+    width: 98% !important;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  table .fa-trophy, table .fa-piggy-bank {
+    display: none;
+  }
 }
 
 .headers {
   height: 100px;
+  background: #0b0b29 !important;
 }
 
 .headers th {
   padding-bottom: 30px !important;
-  border-right: 2px solid red;
   font-size: 1.3rem;
-  text-align: center;
 }
 
 @media screen and (max-width: 420px) {
@@ -99,18 +111,47 @@ table {
   }
 }
 
-td, th {
-  border-right: 2px solid red;
-  text-align: center;
-}
-
 @media screen and (max-width: 420px) {
   td, th {
     font-size: 0.8rem;
   }
 }
 
+@media screen and (max-width: 340px) {
+  td, th {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  td, th {
+    font-size: 0.5rem;
+  }
+  td img, th img {
+    height: 30px !important;
+  }
+}
+
+tbody {
+  background: #0b0b29 !important;
+}
+
 tbody tr:hover {
-  background-color: #282d31 !important;
+  background-color: #171730 !important;
+}
+
+.to-center {
+  border-right: none !important;
+  text-align: center !important;
+}
+
+.fa-chess-knight {
+  height: 40px;
+}
+
+@media screen and (max-width: 300px) {
+  .fa-chess-knight {
+    height: auto !important;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
