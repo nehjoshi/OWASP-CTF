@@ -15,26 +15,31 @@
 
 <body>
     <div class="main container-fluid">
+        <form method="POST" action="/auth">
         <div class="form">
             <div class="subtitle text-center mx-auto d-block">Register To Get Started</div>
             <div class="input-container ic1">
-                <input id="email" class="input" type="text" placeholder=" " />
-                
-                <label for="email" class="placeholder">Email</label>
+                <!--<input id="email" class="input" type="text" placeholder=" " />
+                <label for="email" class="placeholder">Email</label>-->
+                {{ form.email(class_="input") }}
+                {{ form.email.label(class_="placeholder") }}
             </div>
             <div class="input-container ic2">
-                <input id="username" class="input" type="text" placeholder=" " />
-                
-                <label for="password" class="placeholder">Username</label>
+                <!--<input id="username" class="input" type="text" placeholder=" " />
+                <label for="username" class="placeholder">Username</label>-->
+                {{ form.uname(class_="input") }}
+                {{ form.uname.label(class_="placeholder") }}
             </div>
             <div class="input-container ic3">
-                <input id="password" class="input" type="password" placeholder=" " />
-                
-                <label for="password" class="placeholder">Password</label>
+                <!--<input id="password" class="input" type="password" placeholder=" " />
+                <label for="password" class="placeholder">Password</label>-->
+                {{ form.password(class_="input") }}
+                {{ form.password.label(class_="placeholder") }}
             </div>
-            <div class="submit">SUBMIT</button>
+            <div class="submit"><button>SUBMIT</button>
             </div>
         </div>
+        </form>
     </div>
 </body>
 
