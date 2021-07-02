@@ -1,87 +1,230 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
 .hero {
   height: 100vh;
   width: 100%;
   color: #fff;
   background: url("/static/base/images/bg.png");
-  position: absolute;
-  top : 0px;
+  position: fixed;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
-
 }
+
 .hero-wrapper {
   margin-top: 200px;
-
-  
 }
+
 .headings {
   width: 50%;
 }
 
 svg {
-    display: block;
-    font: 10.5em 'Montserrat';
-    width: 960px;
-    height: 200px;
-    margin: 0 auto;
+  display: block;
+  font: 10.5em "Montserrat";
+  width: 960px;
+  height: 200px;
+  margin: 0 auto;
 }
 
 .text-copy {
-    fill: none;
-    stroke: white;
-    stroke-dasharray: 6% 29%;
-    stroke-width: 5px;
-    stroke-dashoffset: 0%;
-    animation: stroke-offset 5.5s infinite linear;
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  -webkit-animation: stroke-offset 5.5s infinite linear;
+  animation: stroke-offset 5.5s infinite linear;
 }
 
-.text-copy:nth-child(1){
+.text-copy:nth-child(1) {
   stroke: #ffffff;
+  -webkit-animation-delay: -1;
   animation-delay: -1;
 }
 
-.text-copy:nth-child(2){
-  stroke: rgb(255, 255, 255);
+.text-copy:nth-child(2) {
+  stroke: white;
+  -webkit-animation-delay: -2s;
   animation-delay: -2s;
 }
 
-.text-copy:nth-child(3){
+.text-copy:nth-child(3) {
   stroke: #ffffff;
+  -webkit-animation-delay: -3s;
   animation-delay: -3s;
 }
 
-.text-copy:nth-child(4){
+.text-copy:nth-child(4) {
   stroke: #a8a6a7;
+  -webkit-animation-delay: -4s;
   animation-delay: -4s;
 }
 
-.text-copy:nth-child(5){
-  stroke: #FDB731;
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  -webkit-animation-delay: -5s;
   animation-delay: -5s;
 }
 
-@keyframes stroke-offset{
-  100% {stroke-dashoffset: -35%;}
-} 
+@-webkit-keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
 .button {
   width: 250px;
   background-color: #fff;
   border-radius: 30px;
   height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-transform: uppercase;
   font-family: "Nunito";
   color: black;
   font-size: 1.3rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #969696;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.abt_desc {
+  font-size: 1.1em ;
+  font-family: 'Fira Mono', monospace;
+}
+
+.rules_desc{
+  font-family: 'Fira Mono', monospace;
+}
+
+.glitch-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+.abt_img{
+  margin:0px auto;
+  display:flex;
+  justify-content: flex-end;
+  max-width: 400px;
+  @media screen and (max-width: 900px){
+    height: 200px;
+  }
   
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(150, 150, 150);
-    transition-duration: 0.3s;
+}
+
+.glitch {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+
+
+  
+  }
+
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+  animation: glitch 500ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  /* color: green; */
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  /* color: red; */
+  opacity: 0.8;
+}
+
+/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
   }
 }
-  
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+
+
+/*# sourceMappingURL=styles.css.map */
