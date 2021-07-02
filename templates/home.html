@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home/css/styles.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %}
+OWASP | CTF
+{% endblock %}
+{% block content %}
+
+<div class="hero container-fluid" id="particles-js">
+    <div class="hero-wrapper">
+                <div class="row">
+                    <!-- <div class="area">OWASP CTF</div> -->
+                    <svg viewBox="0 0 1200 200">
+                        <symbol id="s-text">
+                            <text text-anchor="middle" x="50%" y="80%">OWASP CTF</text>
+                        </symbol>
+
+                        <g class="g-ants">
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                        </g>
+                    </svg>
+                </div>
+                <div class="row mx-auto d-block">
+                    <p class="text-center" style="font-family: 'Nunito';">OWASP VITCC's first Capture The Flag Event.
+                    </p>
+                </div>
+                <div class="row mx-auto d-block">
+                    <div class="button mx-auto ">Register</div>
+                </div>
+    </div>
+
+    
+
+ <script src="{{ url_for('static', filename='base/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='base/js/particles.js') }}"></script>
+
+</div>
+<div style="position: absolute; top: 100vh; background-color: #151019;  width: 100%;color:white;padding:80px;">
+    <!--About section here-->
+    <!--The required css file is static/home/css/styles.css-->
+      <div class="row mt-5 ml-3 mr-5">
+        <div class="col-lg-12 mb-5">
+          
+          <h1 class="glitch">
+            <span aria-hidden="true">OWASP CTF 1.0</span>
+            OWASP CTF 1.0
+            <span aria-hidden="true">OWASP CTF 1.0</span>
+          </h1>
+        </div>
+      </div>
+     
+     <div class="row align-items-center ml-3">
+       <div class="col-md-6 ">
+        <p class="abt_desc ">Lorem, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis dicta non modi? me qui illo officiis dicta non modi?. </p>
+        <p class="abt_desc">Lorem, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis dicta non modi? me qui illo officiis dicta non modi?. m, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis dicta non modi? me qui illo o </p>
+        <p class="abt_desc">Lorem, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis dicta non modi? me qui illo officiis dicta non modi?. </p>
+      
+        
+       </div>
+       
+       <div class="col-md-6 ">
+        
+        <img src="{{ url_for('static', filename='home/images/hack.jpg') }}" class="abt_img">
+
+      </div>
+     </div>
+     <div class="row mt-5 ml-5 mr-5">
+        <div class="col-lg-12">
+         <h1 class="title-heading mb-5  " style="font-size: 4.5em;">Rules</h1>
+        
+        </div>
+     </div>
+      <div class="row mt-3 d-flex flex-row">
+         <div class="col-lg-4 d-inline">
+            <div class=" text-center p-3 rules_desc">
+              <img src="{{ url_for('static', filename='home/images/flag.png') }}" class="img-fluid mx-auto d-block mb-4 rounded-circle" style="max-width: 75px;">
+              <h4 class="fw-light ">Capture the Flag</h4>
+              <p class=" f-14"> CTF 1.0 an online CTF game where you can test and improve your skills with all sorts of challenges (technical puzzles) related to cyber security . </p>
+            </div>
+         </div>
+          <div class="col-lg-4 d-inline rules_desc" >
+            <div class=" text-center p-3">
+              <img src="{{ url_for('static', filename='home/images/join.png') }}" class="img-fluid mx-auto d-block mb-4 rounded-circle" style="max-width: 75px;">
+              <h4 class="fw-light ">Who can join</h4>
+              <p class=" f-14"> CTF 1.0 an online CTF game where you can test and improve your skills with all sorts of challenges (technical puzzles) related to cyber security . </p>
+            </div>
+          </div>
+          <div class="col-lg-4 d-inline rules_desc">
+            <div class=" text-center p-3">
+              <img src="{{ url_for('static', filename='home/images/flag.png') }}" class="img-fluid mx-auto d-block mb-4 rounded-circle" style="max-width: 75px;">
+              <h4 class="fw-light ">Time Limit</h4>
+              <p class=" f-14"> CTF 1.0 an online CTF game where you can test and improve your skills with all sorts of challenges (technical puzzles) related to cyber security . </p>
+            </div>
+          </div>
+
+         
+      </div> 
+
+     
+        
+</div>
+
+
+
+
+    <script>
+        particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 40,
+        "density": {
+          "enable": true,
+          "value_area": 700
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 0.1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 10,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+    </script>
+
+
+
+
+
+
+{% endblock %}

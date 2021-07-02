@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Varela);
+@import "compass/css3";
+.hero {
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  background: url("/static/base/images/bg.png");
+  position: absolute;
+  top: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-wrapper {
+  margin-top: 200px;
+}
+.headings {
+  width: 50%;
+}
+
+svg {
+  display: block;
+  font: 10.5em "Montserrat";
+  width: 960px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #ffffff;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: rgb(255, 255, 255);
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #ffffff;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #a8a6a7;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+.button {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 30px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "Nunito";
+  color: black;
+  font-size: 1.3rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(150, 150, 150);
+    transition-duration: 0.3s;
+  }
+}
+
+.glitch{
+  color:white;
+  font-size:100px;
+  position:relative;
+  width:400px;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 blue; 
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
