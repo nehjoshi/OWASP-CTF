@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+.hero {
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  background: url("/static/base/images/bg.png");
+  position: absolute;
+  top : 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+
+}
+.hero-wrapper {
+  margin-top: 200px;
+
+  
+}
+.headings {
+  width: 50%;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: #ffffff;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: rgb(255, 255, 255);
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: #ffffff;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: #a8a6a7;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: #FDB731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
+} 
+.button {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 30px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "Nunito";
+  color: black;
+  font-size: 1.3rem;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(150, 150, 150);
+    transition-duration: 0.3s;
+  }
+}
+  

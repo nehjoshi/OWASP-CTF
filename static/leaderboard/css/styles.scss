@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito";
+    
+}
+body {
+    background-color: rgb(211, 211, 211) !important;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/static/leaderboard/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    overflow-x: hidden;
+}
+.badge_icon {
+    height: 300px;  
+    min-width: 250px;
+    @media screen and (max-width: 320px){
+        height: 250px;
+    }
+}
+.header h2 {
+    margin-top: 20px;
+    color: rgb(235, 235, 235);
+    font-weight: 900;
+    font-size: clamp(1.1rem, 6vw, 4rem);
+    text-shadow:
+      0 0 7px rgb(235, 235, 235),
+      0 0 10px rgb(235, 235, 235),
+      0 0 21px rgb(235, 235, 235),
+      0 0 50px rgb(26, 118, 161),
+      0 0 50px rgb(26, 118, 161),
+      0 0 50px rgb(26, 118, 161),
+      0 0 50px rgb(26, 118, 161),
+      0 0 50px rgb(26, 118, 161);
+}
+.go-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: rgb(216, 216, 216);
+    font-size: 1.5rem;
+}
+.table-container {
+    min-height: 100vh; 
+    width: 100%;
+
+
+}
+table {
+    margin: 10px auto;
+    width: 97% !important;
+
+}
+.headers {
+    height: 100px;
+    
+    th {
+        padding-bottom: 30px !important;
+        border-right: 2px solid red;
+        font-size: 1.3rem;
+        text-align: center;
+        @media screen and (max-width: 420px){
+            font-size: 0.8rem;
+        }
+        @media screen and (max-width: 310px){
+            font-size: 0.6rem;
+            font-weight: normal;
+        }
+    }
+    @media screen and (max-width: 420px){
+        height: 30px;
+    }
+}
+td, th {
+    border-right: 2px solid red;
+    text-align: center;
+    @media screen and (max-width: 420px){
+        font-size: 0.8rem;
+    }
+}
+tbody tr:hover {
+    background-color: rgb(40, 45, 49) !important;
+}

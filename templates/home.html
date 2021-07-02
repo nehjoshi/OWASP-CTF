@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home/css/styles.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %}
+OWASP | CTF
+{% endblock %}
+{% block content %}
+
+<div class="hero container-fluid" id="particles-js">
+    <div class="hero-wrapper">
+                <div class="row">
+                    <!-- <div class="area">OWASP CTF</div> -->
+                    <svg viewBox="0 0 1200 200">
+                        <symbol id="s-text">
+                            <text text-anchor="middle" x="50%" y="80%">OWASP CTF</text>
+                        </symbol>
+
+                        <g class="g-ants">
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                        </g>
+                    </svg>
+                </div>
+                <div class="row mx-auto d-block">
+                    <p class="text-center" style="font-family: 'Nunito'; font-size: 1.2rem;">OWASP VITCC's first Capture The Flag Event.
+                    </p>
+                </div>
+                <div class="row mx-auto d-block">
+                    <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;"><div class="button mx-auto ">Register</a></div>
+                </div>
+    </div>
+
+ <script src="{{ url_for('static', filename='base/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='base/js/particles.js') }}"></script>
+
+</div>
+<div style="position: absolute; top: 100vh; background-color: rgb(16, 15, 24); height: 100vh; width: 100%">
+    <!--About section here-->
+    <!--The required css file is static/home/css/styles.css-->
+</div>
+
+
+
+
+    <script>
+        particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 40,
+        "density": {
+          "enable": true,
+          "value_area": 700
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 0.1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 10,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+    </script>
+
+
+
+
+
+
+{% endblock %}
