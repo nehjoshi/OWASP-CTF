@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -30,17 +31,9 @@ body {
 .header h2 {
     margin-top: 20px;
     color: rgb(235, 235, 235);
-    font-weight: 900;
+    
     font-size: clamp(1.1rem, 6vw, 4rem);
-    text-shadow:
-      0 0 7px rgb(235, 235, 235),
-      0 0 10px rgb(235, 235, 235),
-      0 0 21px rgb(235, 235, 235),
-      0 0 50px rgb(26, 118, 161),
-      0 0 50px rgb(26, 118, 161),
-      0 0 50px rgb(26, 118, 161),
-      0 0 50px rgb(26, 118, 161),
-      0 0 50px rgb(26, 118, 161);
+    font-family: 'Tourney'
 }
 .go-back {
     position: absolute;
@@ -52,7 +45,7 @@ body {
 .table-container {
     min-height: 100vh; 
     width: 100%;
-
+    z-index: 999;
 
 }
 table {

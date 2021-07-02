@@ -188,4 +188,32 @@
   background-color: black;
   color: #fff;
 }
+
+.btn-override {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.btn-override:hover {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-override:active {
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.btn-override:visited {
+  border: none;
+  outline: none;
+}
+
+.btn-override:focus {
+  border: none;
+  outline: none;
+}
 /*# sourceMappingURL=styles.css.map */

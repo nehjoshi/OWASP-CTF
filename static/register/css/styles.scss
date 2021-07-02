@@ -148,8 +148,31 @@
 
   }
   
-  .submit:active {
+.submit:active {
     background-color: rgb(0, 0, 0);
     color: #fff;
     
   }
+.btn-override{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  &:hover{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &:active{
+    border: none;
+    outline: none;
+    color: #fff;
+  }
+  &:visited {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
