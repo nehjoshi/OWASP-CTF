@@ -87,6 +87,9 @@ def userauth():
             print("Wrong user credentials")
             return redirect("./login")
 
+@app.route('/challenge')
+def challenge(username="Nehjoshi_123"):
+    return render_template('challenge.html', username=username)
 
 if __name__ == '__main__':
     app.run()

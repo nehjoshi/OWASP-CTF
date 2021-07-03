@@ -125,33 +125,28 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  -webkit-animation: glitch 500ms infinite;
-          animation: glitch 500ms infinite;
 }
 
-.glitch-wrapper .abt_img {
+.abt_img {
   margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  max-width: 400px;
 }
 
 @media screen and (max-width: 900px) {
-  .glitch-wrapper .abt_img {
-    height: 200px;
+  .abt_img {
+    height: 150px !important;
+    margin: 0 auto;
+    display: block;
   }
 }
 
-.glitch-wrapper .glitch {
-  font-size: clamp(3rem, 6vw, 6rem);
+.glitch {
+  font-size: clamp(1.8rem, 6vw, 6rem);
   font-weight: 600;
   text-transform: uppercase;
   position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  -webkit-animation: glitch 500ms infinite;
+          animation: glitch 500ms infinite;
 }
 
 .glitch span {

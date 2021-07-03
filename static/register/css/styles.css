@@ -38,7 +38,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url("/static/home/images/bg1.jpg");
+  background-color: #151019;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -55,6 +55,8 @@
   width: -moz-fit-content;
   width: fit-content;
   font-family: "Nunito";
+  border: 2px solid white;
+  padding: 40px 40px;
 }
 
 .title {
