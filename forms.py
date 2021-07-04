@@ -13,3 +13,6 @@ class loginf(FlaskForm):
     email=EmailField('Email id')
     password=PasswordField('Password')
     submit = SubmitField('Submit')
+
+class password(FlaskForm):
+    email=EmailField('Email id')

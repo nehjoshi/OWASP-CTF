@@ -15,9 +15,14 @@
 
 <body>
     <div class="main container-fluid">
-        <form method="POST" action="/auth">
+        <form method="POST" action="/register">
         <div class="form">
             <div class="subtitle text-center mx-auto d-block">Register To Get Started</div>
+            {% if "registered" in flag.keys() %}
+            {% if flag.registered==0 %}
+            <p style="color:red">The email ID already exists</p>
+            {% endif %}
+            {% endif %}
             <div class="input-container ic1">
                 <!--<input id="email" class="input" type="text" placeholder=" " />
                 <label for="email" class="placeholder">Email</label>-->
@@ -36,8 +41,8 @@
                 {{ form.password(class_="input") }}
                 {{ form.password.label(class_="placeholder") }}
             </div>
-            <button class="btn-override">SUBMIT
-            </button>
+            <!--<button class="btn-override">SUBMIT</button>-->
+                {{ form.submit(class_="btn-override") }}
         </div>
         </form>
     </div>
