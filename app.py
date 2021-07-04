@@ -91,5 +91,10 @@ def userauth():
 def challenge(username="Nehjoshi_123"):
     return render_template('challenge.html', username=username)
 
+@app.route('/reset_password')
+def reset():
+    #Reset Password using Email here
+    return render_template('reset_password.html')
+
 if __name__ == '__main__':
     app.run()

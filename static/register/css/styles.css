@@ -151,7 +151,9 @@
   color: #ffffff;
 }
 
-.submit {
+.btn-override {
+  border: none;
+  outline: none;
   background-color: #fff;
   border-radius: 12px;
   border: 0;
@@ -174,35 +176,6 @@
   width: 100%;
 }
 
-.submit:hover {
-  background-color: #9e9e9e;
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
-}
-
-@media screen and (max-width: 420px) {
-  .submit {
-    width: 90%;
-  }
-}
-
-.submit:active {
-  background-color: black;
-  color: #fff;
-}
-
-.btn-override {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.btn-override:hover {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
 .btn-override:active {
   border: none;
   outline: none;
@@ -217,5 +190,18 @@
 .btn-override:focus {
   border: none;
   outline: none;
+}
+
+.btn-override:hover {
+  background-color: #9e9e9e;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  .btn-override {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
