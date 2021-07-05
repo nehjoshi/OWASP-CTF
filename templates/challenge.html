@@ -19,34 +19,26 @@
 
 <body>
     <nav class="navigation container-fluid">
-        <div class="row">
-            <div class="col-lg-7 col-md-12 my-2 logo-wrapper">
+        <div class="row ">
+            <div class="col-xl-7 col-lg-12  my-2 logo-wrapper">
                 <img src="{{ url_for('static', filename='home/images/owasp-logo.png') }}" class="logo">
             </div>
 
-
-
-            <div class="col-lg-2 my-4 links">
-
-                <i class="fas fa-user"></i>
-                <span style="margin-left: 10px">{{ username }}</span>
+            <div class="col-lg-1 my-4 links">
+                <i class="fas fa-user" style="margin-top: 10px; margin-left: 20px"></i>
+                <span class="nav-link" style="margin-top: -30px;" onClick="modalControl()">{{ session.uname }}</span>
             </div>
-            <div class="col-lg-2 my-4 links">
-
-
-                <span style="margin-left: 10px">
-                    <a href="{{url_for('leaderboard')}}"
-                        style="text-decoration: none; color: inherit;">Leaderboards</a></span>
+            <div class="col-lg-1 my-4 links ">
+                <a href="{{url_for('leaderboard')}}" style="text-decoration: none; color: inherit;"><span
+                        class="nav-link text-center">Leaderboard</span></a>
             </div>
-            <div class="col-lg-1 my-3 links">
-                <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;"><span
-                        class="nav-link">Log Out</span></a>
+            <div class="col-lg-1 my-4 links-logout">
+                <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;"><span
+                        class="nav-link">Logout</span></a>
             </div>
             <div class="bars my-4">
                 <i class="fas fa-bars" style="color: #fff" onClick="handleNav()"></i>
             </div>
-
-        </div>
     </nav>
 
     <div class="sidebar-container">
@@ -56,11 +48,28 @@
             </div>
             <div class="sidebar-links">
                 <i class="fas fa-user"></i>
-                <p style="display: inline;">NehJoshi_123</p>
+                <p style="display: inline; cursor: pointer;" onClick="modalControl()">{{ username }}</p>
+                <a href="{{url_for('leaderboard')}}" style="text-decoration: none; color: inherit;">
+                    <p style="width: fit-content; margin-top: 13px;">Leaderboard</p>
+                </a>
                 <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;">
-                    <p style="width: fit-content; margin-top: 10px;">Log Out</p>
+                    <p style="width: fit-content; ">Log Out</p>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <div class="modal-container ">
+        <div class="modal-box">
+            <i class="fas fa-times close-icon-modal" onClick="modalControl()"></i>
+            <div class="row" style="border-bottom: 1px solid gray;">
+                <h2 class="add">Add A Profile Picture</h2>
+            </div>
+            <label for="user-flag" class="label my-2">Upload Picture</label>
+            <input type="file" class="form-control-file" id="user-flag" accept=".png, .jpg, .gif">
+            <button class="btn-override my-4">SUBMIT
+            </button>
+
         </div>
     </div>
 
@@ -76,7 +85,7 @@
                         25/07/2021</span></div>
             </div>
             <div class="row mx-2">
-                <div class="col-lg-8 col-md-12 my-5 py-4" style="border: 1px solid gray; border-radius: 5px; ">
+                <div class="col-xl-8 col-lg-12 my-5 py-4" style="border: 1px solid gray; border-radius: 5px; ">
                     <p class="lead">
                         Note: It is quite easy to cheat your way to get flag , but try not to.</p>
                     <p class="lead">To use it cleanly , run the command below:<br>
@@ -90,7 +99,7 @@
                         This is a hard machine, enjoy it :)</p>
                     </p>
                 </div>
-                <div class="col-lg-3 col-md-12 my-5 py-4 command"
+                <div class="col-xl-3 col-lg-12 my-5 py-4 command"
                     style="border: 1px solid gray; height: fit-content; border-radius: 5px;">
                     <p class="lead">
                         Docker Command:</p>
@@ -112,34 +121,37 @@
                         consectetur adipisicing elit. </span></div>
             </div>
             <div class="row mx-2">
-                <div class="col-lg-8 col-md-12 my-5 py-4" style="border: 1px solid gray; border-radius: 5px; ">
+                <div class="col-xl-8 col-lg-12 my-5 py-4" style="border: 1px solid gray; border-radius: 5px; ">
                     <form>
-                        <label for="root-flag"  class="label">What is the root flag?</label>
+                        <label for="root-flag" class="label">What is the root flag?</label>
                         <input type="text" class="form-control" id="root-flag" placeholder="Answer Here">
 
-                        <label for="user-flag"  class="label my-2">What is the user flag?</label>
+                        <label for="user-flag" class="label my-2">What is the user flag?</label>
                         <input type="text" class="form-control" id="user-flag" placeholder="Answer Here">
 
-                        <label for="user-flag"  class="label my-2">Upload Answer File</label>
-                        <input type="file" class="form-control-file" id="user-flag" >
+                        <label for="user-flag" class="label my-2">Upload Answer File</label>
+                        <input type="file" class="form-control-file" id="user-flag" accept=".doc, .docx, .txt">
 
                         <div class="submit">SUBMIT</div>
                     </form>
                 </div>
-                <div class="col-lg-3 col-md-12 my-5 command " style="border: 1px solid gray; height: fit-content; border-radius: 5px;">
+                <div class="col-xl-3 col-lg-12 my-5 command "
+                    style="border: 1px solid gray; height: fit-content; border-radius: 5px;">
                     <div class="circle-wrapper">
                         <div class="warning circle"></div>
                         <div class="icon">
-                          <i class="fa fa-exclamation"></i>
+                            <i class="fa fa-exclamation"></i>
                         </div>
-                      </div>
-                      <p class="my-4 alert">Duplicate files will NOT be considered for evaluation </p>
+                    </div>
+                    <p class="my-4 alert">Duplicate files will NOT be considered for evaluation </p>
                 </div>
             </div>
         </div>
 
     </div>
-    <script src="{{ url_for('static', filename='base/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='challenge/js/script.js') }}"></script>
+
+
 
 </body>
 

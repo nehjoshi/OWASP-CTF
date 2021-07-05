@@ -33,46 +33,45 @@ OWASP | CTF
         Event.
       </p>
     </div>
+    
     <div class="row mx-auto d-block">
       <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;">
-        <div class="button mx-auto ">Register
+        <div class="button mx-auto ">Register</div>
       </a>
     </div>
+    
   </div>
 </div>
 
-<script src="{{ url_for('static', filename='base/js/script.js') }}"></script>
-<script src="{{ url_for('static', filename='base/js/particles.js') }}"></script>
 
 </div>
-<div style="position: absolute; top: 100vh; background-color: #151019;  width: 100%;color:white;padding:80px;">
+<div class="container-fluid"
+  style="position: absolute; top: 100vh; background-color: #151019;  width: 100%;color:white;padding-top:80px;">
 
-  <div class="row mt-5 ml-3 mr-5 glitch-wrapper">
-    <div class="col-12 mb-5">
+  <div class="row mt-3 glitch-wrapper " >
+    <div class="col-12 mb-5 ">
 
-      <h1 class="glitch">
-        <span aria-hidden="true">OWASP CTF 1.0</span>
-        OWASP CTF 1.0
-        <span aria-hidden="true">OWASP CTF 1.0</span>
-      </h1>
+      <h1 class="glitch text-center">OWASP CTF 1.0</h1>
     </div>
   </div>
 
   <div class="row align-items-center ml-3">
-    <div class="col-lg-8 col-md-12 ">
-      <p class="abt_desc ">Lorem, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis dicta non
-        modi? me qui illo officiis dicta non modi?. </p>
-      <p class="abt_desc">Lorem, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis dicta non modi?
-        me qui illo officiis dicta non modi?. m, ipsum dolor sit amet consectetur adipisicillum maxime qui illo officiis
-        dicta non modi? me qui illo o </p>
+    <div class="col-lg-6 col-md-12 ">
+      <p class="abt_desc "><strong>Dear Cyber Security Enthusiasts, </strong></p>
+      <p class="abt_desc">Welcome to OWASP VITCC's Capture The Flag (CTF). Buckle yourselves up
+        and get yourselves registered FOR FREE on or before the 23rd of July. Do keep in mind that the challenge won't be easy,
+        but being Cyber Security Enthusiasts, nothing can be an excuse!</p>
+        <p class="abt_desc">We look forward to seeing your names on the leaderboard!</p>
+        <p class="abt_desc"> - OWASP VITCC</p>
+      
 
 
 
     </div>
 
-    <div class="col-lg-4 col-md-12 ">
+    <div class="col-lg-6 col-md-12 ">
 
-      <img src="{{ url_for('static', filename='home/images/owasp-logo.png') }}" class="abt_img">
+      <img src="{{ url_for('static', filename='home/images/owasp-logo.png') }}" class="abt_img mx-auto d-block">
 
     </div>
   </div>
@@ -121,6 +120,8 @@ OWASP | CTF
 
 
 
+<script src="{{ url_for('static', filename='base/js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='base/js/particles.js') }}"></script>
 <script>
   particlesJS("particles-js", {
     "particles": {

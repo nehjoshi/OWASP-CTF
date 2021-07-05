@@ -106,7 +106,7 @@ svg {
 }
 
 .abt_desc {
-  font-size: 1.1em;
+  font-size: 1.2rem;
   font-family: 'Fira Mono', monospace;
 }
 
@@ -127,10 +127,6 @@ svg {
           align-items: center;
 }
 
-.abt_img {
-  margin: 0px auto;
-}
-
 @media screen and (max-width: 900px) {
   .abt_img {
     height: 150px !important;
@@ -140,10 +136,9 @@ svg {
 }
 
 .glitch {
-  font-size: clamp(1.8rem, 6vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   font-weight: 600;
   text-transform: uppercase;
-  position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   -webkit-animation: glitch 500ms infinite;
           animation: glitch 500ms infinite;
