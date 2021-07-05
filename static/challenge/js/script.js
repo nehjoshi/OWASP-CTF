@@ -1,4 +1,5 @@
 const sidebar = document.querySelector(".sidebar-container");
+const modal = document.querySelector('.modal-container');
 
 const handleNav = () => {
     console.log("Clicked!");
@@ -7,7 +8,14 @@ const handleNav = () => {
 const handleClose = () => {
     sidebar.className="sidebar-container";
 }
-const copyToClipboard = () => {
-    const text = "docker pull owaspctf/tovc-1";
-    const cp = new ClipboardJS('.fa-copy');
+const modalControl = () => {
+    
+    sidebar.className="sidebar-container";
+    if (!modal.style.display || modal.style.display=="none"){
+        modal.style.display="flex";
+        console.log("called!");
+    }
+    else {
+        modal.style.display="none";
+    }
 }

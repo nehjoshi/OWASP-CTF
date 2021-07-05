@@ -38,7 +38,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #151019;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("/static/register/images/bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/static/register/images/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -55,8 +56,14 @@
   width: -moz-fit-content;
   width: fit-content;
   font-family: "Nunito";
-  border: 2px solid white;
+  border: 3px solid #8f8f8f;
   padding: 40px 40px;
+}
+
+.form:hover {
+  border-color: #fff;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
 }
 
 .title {
@@ -92,7 +99,7 @@
 }
 
 .input {
-  background-color: #303245;
+  background-color: #4c506e;
   border-radius: 12px;
   border: 0;
   -webkit-box-sizing: border-box;

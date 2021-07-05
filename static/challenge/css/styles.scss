@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .navigation {
     color: #fff;
     font-family: "Nunito";
     font-size: 1rem;
-    position: fixed;
+    position: absolute;
     z-index: 999;
     
   }
@@ -16,9 +17,9 @@
   }
   .logo {
     height: 75px;
-    @media screen and (max-width: 992px) {
-      margin: 0 auto;
-      display: block;
+    @media screen and (max-width: 1200px) {
+      margin: 0 auto !important;
+      display: block !important;
     }
     @media screen and (max-width: 420px){
       height: 50px;
@@ -27,7 +28,7 @@
   }
   
   .nav-link {
-    transform: translate(-40px);
+    transform: translate(40px);
     &:hover {
       color: rgb(177, 177, 177);
       transition-duration: 0.25s;
@@ -36,7 +37,15 @@
   }
   .links {
     z-index: 100;
-    @media screen and (max-width: 992px){
+    margin-left: 40px;
+    @media screen and (max-width: 1200px){
+      display: none;
+    }
+  }
+  .links-logout {
+    z-index: 100;
+    margin-left: 30px;
+    @media screen and (max-width: 1200px){
       display: none;
     }
   }
@@ -49,7 +58,7 @@
     &:hover {
       cursor: pointer;
     }
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 1200px){
       display: block;
     }
   }
@@ -109,14 +118,109 @@
       font-size: 1.2rem;
       padding: 10px 20px;
       font-weight: 900;
-      p {
-        height: 50px;
-      }
+
     }
-    @media screen and (min-width: 992px){
+    @media screen and (min-width: 1200px){
       display: none;
     }
   }
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  z-index: 1000 ;
+  background-color: rgba(0,0,0,0.7);
+  display: block;
+  background-color: rgba(0,0,0,0.7);
+
+}
+.modal-box {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  padding: 10px 10px;
+  width: 50%;
+  height: 260px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 7px;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  animation-iteration-count: 1;
+  font-family: "Nunito";
+  h1 {
+    font-weight: 900;
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width: 870px){
+    width: 90%;
+    
+  }
+
+}
+.close-icon-modal {
+  font-size: 1.7rem;
+  float: right;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.add {
+  color: rgb(65, 65, 65);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+ 
+.btn-override{
+  border: none;
+  outline: none;
+  
+  &:active{
+    border: none;
+    outline: none;
+    color: #fff;
+  }
+  &:visited {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
+  background-color: rgb(0, 29, 66);
+  border-radius: 12px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  width: 40%;
+  margin: 0 auto;
+  font-size: 18px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+      background-color: rgb(1, 22, 49);
+      transition-duration: 0.25s;
+      cursor: pointer;
+  }
+  @media screen and (max-width: 640px){
+    width: 90%;
+  }
+
+}
 .main {
     position: absolute;
     top: 0;
@@ -138,6 +242,7 @@
 }
 .code {
     background-color: black;
+    font-size: 0.9rem;
     @media screen and (max-width: 310px){
       font-size: 0.8rem;
     }
@@ -147,10 +252,10 @@
     border: 1px solid gray; 
     height: fit-content; 
     border-radius: 5px;
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1200px) {
         margin-left: 0px;
     }
-}
+} 
 .main-wrapper p {
     @media screen and (max-width: 420px){
         font-size: 1rem;
@@ -182,8 +287,11 @@
   float: left;
   margin-top: 20px;
   margin-right: 10px;
-  @media screen and (max-width: 520px){
-    
+  @media screen and (max-width: 1200px){
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 350px){
+    margin-top: 20px;
   }
 }
 .icon {
@@ -228,6 +336,7 @@
   }
 }
 .alert {
+  font-size: 0.9rem;
   @media screen and (max-width: 605px){
     font-size: 0.8rem;
   }

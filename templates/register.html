@@ -41,6 +41,8 @@
                 {{ form.password(class_="input") }}
                 {{ form.password.label(class_="placeholder") }}
             </div>
+            <p class="my-2" style="color: rgb(189, 189, 189)"><a href="{{url_for('login')}}"
+                style="text-decoration: none; color: inherit;">Already have an account? Sign in</a></p>
             <!--<button class="btn-override">SUBMIT</button>-->
                 {{ form.submit(class_="btn-override") }}
         </div>

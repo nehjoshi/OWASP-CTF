@@ -9,7 +9,7 @@
   color: #fff;
   font-family: "Nunito";
   font-size: 1rem;
-  position: fixed;
+  position: absolute;
   z-index: 999;
 }
 
@@ -21,10 +21,10 @@
   height: 75px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .logo {
-    margin: 0 auto;
-    display: block;
+    margin: 0 auto !important;
+    display: block !important;
   }
 }
 
@@ -36,8 +36,8 @@
 }
 
 .nav-link {
-  -webkit-transform: translate(-40px);
-          transform: translate(-40px);
+  -webkit-transform: translate(40px);
+          transform: translate(40px);
 }
 
 .nav-link:hover {
@@ -49,10 +49,22 @@
 
 .links {
   z-index: 100;
+  margin-left: 40px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .links {
+    display: none;
+  }
+}
+
+.links-logout {
+  z-index: 100;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .links-logout {
     display: none;
   }
 }
@@ -69,7 +81,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .bars {
     display: block;
   }
@@ -152,13 +164,137 @@
   font-weight: 900;
 }
 
-.sidebar-container-active .sidebar-links p {
-  height: 50px;
-}
-
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .sidebar-container-active {
     display: none;
+  }
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-box {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  padding: 10px 10px;
+  width: 50%;
+  height: 260px;
+  background-color: #e4e4e4;
+  border-radius: 7px;
+  -webkit-animation-name: fade-in;
+          animation-name: fade-in;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  font-family: "Nunito";
+}
+
+.modal-box h1 {
+  font-weight: 900;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .modal-box {
+    width: 90%;
+  }
+}
+
+.close-icon-modal {
+  font-size: 1.7rem;
+  float: right;
+}
+
+.close-icon-modal:hover {
+  cursor: pointer;
+}
+
+.add {
+  color: #414141;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.btn-override {
+  border: none;
+  outline: none;
+  background-color: #001d42;
+  border-radius: 12px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  width: 40%;
+  margin: 0 auto;
+  font-size: 18px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-override:active {
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.btn-override:visited {
+  border: none;
+  outline: none;
+}
+
+.btn-override:focus {
+  border: none;
+  outline: none;
+}
+
+.btn-override:hover {
+  background-color: #011631;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .btn-override {
+    width: 90%;
   }
 }
 
@@ -185,6 +321,7 @@
 
 .code {
   background-color: black;
+  font-size: 0.9rem;
 }
 
 @media screen and (max-width: 310px) {
@@ -202,7 +339,7 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .command {
     margin-left: 0px;
   }
@@ -249,6 +386,18 @@
   float: left;
   margin-top: 20px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .circle-wrapper {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .circle-wrapper {
+    margin-top: 20px;
+  }
 }
 
 .icon {
@@ -310,6 +459,10 @@
   .label {
     font-size: 1rem !important;
   }
+}
+
+.alert {
+  font-size: 0.9rem;
 }
 
 @media screen and (max-width: 605px) {
