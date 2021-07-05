@@ -20,33 +20,26 @@
 
 <body >
     <nav class="navigation container-fluid">
-        <div class="row">
-            <div class="col-lg-7 col-md-12 my-2 logo-wrapper">
+        <div class="row ">
+            <div class="col-xl-7 col-lg-12  my-2 logo-wrapper">
                 <img src="{{ url_for('static', filename='home/images/owasp-logo.png') }}" class="logo">
             </div>
 
-
-
-            <div class="col-lg-2 my-4 links">
-
-               
+            <div class="col-lg-1 my-4 links">
+                <i class="fas fa-user" style="margin-top: 10px; margin-left: 20px" onClick="modalControl()"></i>
+                <span class="nav-link" style="margin-top: -30px;" onClick="modalControl()">{{ session.uname }}</span>
             </div>
-            <div class="col-lg-2 my-4 links">
-               
-                <i class="fas fa-user"></i>
-                <span style="margin-left: 20px">Neh joshi 123</span>
-
-                
+            <div class="col-lg-1 my-4 links ">
+                <a href="{{url_for('leaderboard')}}" style="text-decoration: none; color: inherit;"><span
+                        class="nav-link text-center">Leaderboard</span></a>
             </div>
-            <div class="col-lg-1 my-3 links">
-                <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;"><span
-                        class="nav-link">Log Out</span></a>
+            <div class="col-lg-1 my-4 links-logout">
+                <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;"><span
+                        class="nav-link">Logout</span></a>
             </div>
             <div class="bars my-4">
                 <i class="fas fa-bars" style="color: #fff" onClick="handleNav()"></i>
             </div>
-
-        </div>
     </nav>
     
     <div class="sidebar-container">
@@ -63,6 +56,21 @@
             </div>
         </div>
     </div>
+
+    <div class="modal-container ">
+        <div class="modal-box">
+            <i class="fas fa-times close-icon-modal" onClick="modalControl()"></i>
+            <div class="row" style="border-bottom: 1px solid gray;">
+                <h2 class="add">Add A Profile Picture</h2>
+            </div>
+            <label for="user-flag" class="label my-2">Upload A Picture</label>
+            <input type="file" class="form-control-file" id="user-flag" accept=".png, .jpg, .gif">
+            <button class="btn-override my-4">SUBMIT
+            </button>
+
+        </div>
+    </div>
+
     <div class="main container-fluid">
         <div class="container">
             <h1 id="headline">CTF will be live In:</h1>
@@ -75,7 +83,7 @@
               </ul>
             </div>
             <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;">
-                <div class="button mx-auto ">Challenges
+                <button class="button mx-auto ">Challenges</button>
               </a>
           </div>
 

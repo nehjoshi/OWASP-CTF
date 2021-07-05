@@ -137,6 +137,11 @@
   background-color: rgba(0,0,0,0.7);
 
 }
+.fa-user {
+  &:hover{
+    cursor: pointer;
+  }
+}
 .modal-box {
   position: fixed;
   left: 50%;
@@ -145,6 +150,10 @@
   padding: 10px 10px;
   width: 50%;
   height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(228, 228, 228);
   border-radius: 7px;
   animation-name: fade-in;
@@ -172,7 +181,9 @@
 }
 .close-icon-modal {
   font-size: 1.7rem;
-  float: right;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   &:hover {
     cursor: pointer;
   }

@@ -32,6 +32,7 @@
         }, 0)
     }());
 
+const modal = document.querySelector(".modal-container")
 const sidebar = document.querySelector(".sidebar-container");
 
 const handleNav = () => {
@@ -40,4 +41,15 @@ const handleNav = () => {
 }
 const handleClose = () => {
     sidebar.className="sidebar-container";
+}
+const modalControl = () => {
+    
+  sidebar.className="sidebar-container";
+  if (!modal.style.display || modal.style.display=="none"){
+      modal.style.display="flex";
+      console.log("called!");
+  }
+  else {
+      modal.style.display="none";
+  }
 }
