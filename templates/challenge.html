@@ -24,32 +24,17 @@
                 <img src="{{ url_for('static', filename='home/images/owasp-logo.png') }}" class="logo">
             </div>
 
-<<<<<<< Updated upstream
-
-
-            <div class="col-lg-2 my-4 links">
-
-                <i class="fas fa-user"></i>
-                <span style="margin-left: 10px">{{ session.uname }}</span>
-=======
             <div class="col-lg-1 my-4 links">
                 <i class="fas fa-user" style="margin-top: 10px; margin-left: 20px"></i>
-                <span class="nav-link" style="margin-top: -30px;" onClick="modalControl()">{{ username }}</span>
->>>>>>> Stashed changes
+                <span class="nav-link" style="margin-top: -30px;" onClick="modalControl()">{{ session.uname }}</span>
             </div>
             <div class="col-lg-1 my-4 links ">
                 <a href="{{url_for('leaderboard')}}" style="text-decoration: none; color: inherit;"><span
                         class="nav-link text-center">Leaderboard</span></a>
             </div>
-<<<<<<< Updated upstream
-            <div class="col-lg-1 my-3 links">
-                <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;"><span
-                        class="nav-link">Log Out</span></a>
-=======
             <div class="col-lg-1 my-4 links-logout">
                 <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;"><span
                         class="nav-link">Logout</span></a>
->>>>>>> Stashed changes
             </div>
             <div class="bars my-4">
                 <i class="fas fa-bars" style="color: #fff" onClick="handleNav()"></i>

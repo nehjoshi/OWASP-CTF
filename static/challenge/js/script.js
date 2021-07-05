@@ -1,6 +1,6 @@
 const sidebar = document.querySelector(".sidebar-container");
 const modal = document.querySelector('.modal-container');
-
+modal.style.display="none";
 const handleNav = () => {
     console.log("Clicked!");
     sidebar.className="sidebar-container-active";
