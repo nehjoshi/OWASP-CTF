@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import sys
 import pyrebase
 import requests
 from flask import Flask, redirect, url_for, request,session
@@ -32,7 +33,7 @@ Session(app)
 @app.route('/')
 @app.route('/home')
 def home_page():
-    return render_template('home.html')
+    return render_template('home.html',session=session)
 
 @app.route('/register',methods=["GET","POST"])
 def register():
@@ -66,6 +67,13 @@ def leaderboard():
 def login():
     flags={"verify":1,"credentials":0}
     form = loginf()
+    if "loggedout" in flags:
+        del flags["loggedout"]
+    if "logged" and "email" and "uname" in session:
+        flags["loggedout"]=True
+        del session["logged"]
+        del session["email"]
+        del session["uname"]
     try:
         if(session["registered"]==1):
             flags["registered"]=1
@@ -77,7 +85,14 @@ def login():
         password=request.form.get("password")
         try:
             user=auth.sign_in_with_email_and_password(email,password)
-            if(auth.get_account_info(user["idToken"])["users"][0]["emailVerified"]==True):
+            if(auth.get_account_info(user["idToken"])["users"][0]["emailVerified"]==False):
+                dataset=ref.get()
+                for keys in dataset:
+                    if(dataset[keys]["emailid"]==email):
+                        session["logged"]=True
+                        session["email"]=email
+                        session["uname"]=dataset[keys]["username"]
+                        break
                 return redirect("./")
             else:
                 auth.current_user = None
@@ -88,8 +103,8 @@ def login():
     return render_template('login.html', form=form,flag=flags)
 
 @app.route('/challenge')
-def challenge(username="Nehjoshi_123"):
-    return render_template('challenge.html', username=username)
+def challenge():
+    return render_template('challenge.html',session=session)
 
 @app.route('/reset_password',methods=["GET","POST"])
 def reset():
