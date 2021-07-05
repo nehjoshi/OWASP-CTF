@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register/css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='home/images/owasp-logo.png') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>OWASP CTF | Register</title>
+</head>
+
+<body>
+    <div class="main container-fluid">
+        <form method="POST" action="/register">
+        <div class="form">
+            <div class="subtitle text-center mx-auto d-block">Register To Get Started</div>
+            {% if "registered" in flag.keys() %}
+            {% if flag.registered==0 %}
+            <p style="color:red">The email ID already exists</p>
+            {% endif %}
+            {% endif %}
+            <div class="input-container ic1">
+                <!--<input id="email" class="input" type="text" placeholder=" " />
+                <label for="email" class="placeholder">Email</label>-->
+                {{ form.email(class_="input") }}
+                {{ form.email.label(class_="placeholder") }}
+            </div>
+            <div class="input-container ic2">
+                <!--<input id="username" class="input" type="text" placeholder=" " />
+                <label for="username" class="placeholder">Username</label>-->
+                {{ form.uname(class_="input") }}
+                {{ form.uname.label(class_="placeholder") }}
+            </div>
+            <div class="input-container ic3">
+                <!--<input id="password" class="input" type="password" placeholder=" " />
+                <label for="password" class="placeholder">Password</label>-->
+                {{ form.password(class_="input") }}
+                {{ form.password.label(class_="placeholder") }}
+            </div>
+            <!--<button class="btn-override">SUBMIT</button>-->
+                {{ form.submit(class_="btn-override") }}
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>
