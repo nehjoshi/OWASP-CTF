@@ -37,6 +37,7 @@ h1 {
   letter-spacing: .125rem;
   text-transform: uppercase;
   background: -webkit-linear-gradient(white, #38495a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "lato", sans-serif;
@@ -50,6 +51,7 @@ li {
   padding: 1em;
   text-transform: uppercase;
   background: -webkit-linear-gradient(white, #38495a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "lato", sans-serif;
@@ -59,6 +61,7 @@ li span {
   display: block;
   font-size: 4.5rem;
   background: -webkit-linear-gradient(white, #38495a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "lato", sans-serif;
@@ -82,7 +85,8 @@ li span {
 
 .button {
   width: 250px;
-  background-color: #fff;
+  background-color: #fff !important;
+  font-family: "lato", sans-serif;
   border-radius: 30px;
   height: 45px;
   display: -webkit-box;
@@ -96,15 +100,23 @@ li span {
   align-items: center;
   text-transform: uppercase;
   font-family: "Nunito";
-  color: black;
+  color: black !important;
   font-size: 1.3rem;
+  z-index: 10000;
+  outline: none;
+  border-color: transparent;
+}
+
+.button:focus {
+  border: none;
+  outline: none;
 }
 
 .button:hover {
   cursor: pointer;
-  background-color: #969696;
   -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  background-color: #9e9e9e !important;
 }
 
 html {
@@ -190,6 +202,7 @@ html {
 
 #title span {
   background: -webkit-linear-gradient(white, #38495a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
