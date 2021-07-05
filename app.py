@@ -105,6 +105,9 @@ def login():
 @app.route('/challenge')
 def challenge():
     return render_template('challenge.html',session=session)
+@app.route('/timer')
+def timer():
+    return render_template('timer.html')    
 
 @app.route('/reset_password',methods=["GET","POST"])
 def reset():
@@ -122,4 +125,4 @@ def reset():
     return render_template('reset_password.html',form=form,value=data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
