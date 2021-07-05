@@ -29,7 +29,7 @@
             <div class="col-lg-2 my-4 links">
 
                 <i class="fas fa-user"></i>
-                <span style="margin-left: 10px">{{ username }}</span>
+                <span style="margin-left: 10px">{{ session.uname }}</span>
             </div>
             <div class="col-lg-2 my-4 links">
 
@@ -39,7 +39,7 @@
                         style="text-decoration: none; color: inherit;">Leaderboards</a></span>
             </div>
             <div class="col-lg-1 my-3 links">
-                <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;"><span
+                <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;"><span
                         class="nav-link">Log Out</span></a>
             </div>
             <div class="bars my-4">
