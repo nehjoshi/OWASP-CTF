@@ -33,11 +33,13 @@ OWASP | CTF
         Event.
       </p>
     </div>
+    {% if session.logged!=True %}
     <div class="row mx-auto d-block">
       <a href="{{url_for('register')}}" style="text-decoration: none; color: inherit;">
         <div class="button mx-auto ">Register
       </a>
     </div>
+    {% endif %}
   </div>
 </div>
 
