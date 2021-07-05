@@ -61,7 +61,10 @@ def register():
 
 @app.route('/leaderboard')
 def leaderboard():
-    return render_template('leaderboard.html')
+    if "uname" in session:
+        return render_template('leaderboard.html') 
+    else:
+        return redirect("./")
 
 @app.route('/login',methods=["GET","POST"])
 def login():
@@ -93,7 +96,7 @@ def login():
                         session["email"]=email
                         session["uname"]=dataset[keys]["username"]
                         break
-                return redirect("./")
+                return redirect("./timer")
             else:
                 auth.current_user = None
                 flags["verify"]=0
@@ -104,10 +107,17 @@ def login():
 
 @app.route('/challenge')
 def challenge():
-    return render_template('challenge.html',session=session)
+    if "uname" in session:
+        return render_template('challenge.html') 
+    else:
+        return redirect("./") 
+
 @app.route('/timer')
 def timer():
-    return render_template('timer.html')    
+    if "uname" in session:
+        return render_template('timer.html') 
+    else:
+        return redirect("./")   
 
 @app.route('/reset_password',methods=["GET","POST"])
 def reset():
