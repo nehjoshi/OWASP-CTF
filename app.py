@@ -144,5 +144,9 @@ def reset():
 def email_verified():
     return render_template('verified_email.html')
 
+@app.route('/new_password')
+def new_password():
+    return render_template('new_password.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
