@@ -46,6 +46,11 @@ def register():
         username=request.form.get("uname")
         email=request.form.get("email")
         password=request.form.get("password")
+        dataset=ref.get()
+        for keys in dataset:
+            if dataset[keys]["username"]==username:
+                flags["uname_exists"]=True
+                return render_template('register.html', form=form,flag=flags)
         if(len(password)<6):
             flags["invalidpass"]=1
             return render_template('register.html', form=form,flag=flags)
@@ -55,7 +60,10 @@ def register():
             data={
                 "username": username,
                 "emailid": email,
-                "Scores": 0
+                "isUserflag":False,
+                "isRootflag":False,
+                "isFile":False,
+                "scores": 0
             }
             ref.push().set(data)
             flags["registered"]=1
@@ -68,7 +76,12 @@ def register():
 @app.route('/leaderboard')
 def leaderboard():
     if "uname" in session:
-        return render_template('leaderboard.html') 
+        users=[]
+        dataset=ref.get()
+        for keys in dataset:
+            users.append(dataset[keys]["username"])
+        print(users)
+        return render_template('leaderboard.html',vals=users) 
     else:
         return redirect("./")
 
