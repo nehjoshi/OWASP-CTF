@@ -19,6 +19,9 @@
         <form method="POST" action="/register">
         <div class="form">
             <div class="subtitle text-center mx-auto d-block">Register To Get Started</div>
+            {% if flag.uname_exists==True %}
+            <p style="color:red">Username already exists. <br> Please try using different username.</p>
+            {% endif %}
             {% if flag.invalidpass==1 %}
             <p style="color:red">Your password is too short</p>
             {% endif %}

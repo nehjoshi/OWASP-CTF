@@ -59,17 +59,33 @@
                 </tr>
             </thead>
             <tbody>
+            {% for i in range(vals|length) %}
                 <tr>
                     <td class="to-center">
-                        1</td>
+                        {{ i+1 }}</td>
                     <td class="to-center">
+                        {% if i==0 %}
                         <img src="{{url_for('static', filename='leaderboard/images/crown.png')}}" style="height: 40px;">
+                        {% elif i==1 %}
+                        <img src="{{url_for('static', filename='leaderboard/images/second.jpg')}}" style="height: 40px;">
+                        {% elif i==2 %}
+                        <img src="{{url_for('static', filename='leaderboard/images/third.jpg')}}" style="height: 40px;">
+                        {% elif i==3 %}
+                        <img src="{{url_for('static', filename='leaderboard/images/trophy_gold.jpg')}}" style="height: 40px;">
+                        {% elif i==4 %}
+                        <img src="{{url_for('static', filename='leaderboard/images/trophy_silver.png')}}" style="height: 40px;">
+                        {% elif i==5 %}
+                        <img src="{{url_for('static', filename='leaderboard/images/trophy_bronze.png')}}" style="height: 40px;">
+                        {% else %}
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
+                        {% endif %}
                     </td>
-                    <td>NehJoshi_123</td>
-                    <td class="to-center">100</td>
+                    <td>{{ vals[i] }}</td>
+                    <td class="to-center">-</td>
 
                 </tr>
-                <tr>
+            {% endfor %}
+                <!---<tr>
                     <td class="to-center">
                         2</td>
                     <td class="to-center"> <img src="{{url_for('static', filename='leaderboard/images/second.jpg')}}"
@@ -151,7 +167,7 @@
                         <i class="fas fa-chess-knight" style="font-size: 1.8rem; color: rgb(151, 151, 149)"></i></td>
                     <td>NehJoshi_123</td>
                     <td class="to-center">100</td>
-                </tr>
+                </tr>--->
                 
             </tbody>
         </table>
