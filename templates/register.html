@@ -19,6 +19,9 @@
         <form method="POST" action="/register">
         <div class="form">
             <div class="subtitle text-center mx-auto d-block">Register To Get Started</div>
+            {% if flag.invalidpass==1 %}
+            <p style="color:red">Your password is too short</p>
+            {% endif %}
             {% if "registered" in flag.keys() %}
             {% if flag.registered==0 %}
             <p style="color:red">The email ID already exists</p>
