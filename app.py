@@ -33,7 +33,10 @@ Session(app)
 @app.route('/')
 @app.route('/home')
 def home_page():
-    return render_template('home.html',session=session)
+    if "uname" in session:
+        return redirect('/timer') 
+    else: 
+        return render_template('home.html',session=session)
 
 @app.route('/register',methods=["GET","POST"])
 def register():
@@ -43,6 +46,9 @@ def register():
         username=request.form.get("uname")
         email=request.form.get("email")
         password=request.form.get("password")
+        if(len(password)<6):
+            flags["invalidpass"]=1
+            return render_template('register.html', form=form,flag=flags)
         try:
             user=auth.create_user_with_email_and_password(email,password)
             auth.send_email_verification(user['idToken'])
@@ -88,7 +94,7 @@ def login():
         password=request.form.get("password")
         try:
             user=auth.sign_in_with_email_and_password(email,password)
-            if(auth.get_account_info(user["idToken"])["users"][0]["emailVerified"]==True):
+            if(auth.get_account_info(user["idToken"])["users"][0]["emailVerified"]==False):
                 dataset=ref.get()
                 for keys in dataset:
                     if(dataset[keys]["emailid"]==email):
