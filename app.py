@@ -94,7 +94,7 @@ def login():
         password=request.form.get("password")
         try:
             user=auth.sign_in_with_email_and_password(email,password)
-            if(auth.get_account_info(user["idToken"])["users"][0]["emailVerified"]==False):
+            if(auth.get_account_info(user["idToken"])["users"][0]["emailVerified"]==True):
                 dataset=ref.get()
                 for keys in dataset:
                     if(dataset[keys]["emailid"]==email):
