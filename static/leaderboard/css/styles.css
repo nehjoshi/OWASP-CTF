@@ -25,7 +25,9 @@ body {
           align-items: center;
   height: 99vh;
   width: 100%;
-  background-color: black;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("/static/leaderboard/images/bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/static/leaderboard/images/bg.jpg");
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 100%;

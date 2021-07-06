@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ url_for('static', filename='home/images/owasp-logo.png') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
     <title>OWASP CTF | Register</title>
 </head>
 
@@ -26,8 +27,8 @@
             <div class="input-container ic1">
                 <!--<input id="email" class="input" type="text" placeholder=" " />
                 <label for="email" class="placeholder">Email</label>-->
-                {{ form.email(class_="input") }}
-                {{ form.email.label(class_="placeholder") }}
+                {{ form.email(class_="input", placeholder_=" ", id_="email", type_="email") }}
+                {{ form.email.label(class_="placeholder", for_="email") }}
             </div>
             <div class="input-container ic2">
                 <!--<input id="username" class="input" type="text" placeholder=" " />
@@ -38,16 +39,22 @@
             <div class="input-container ic3">
                 <!--<input id="password" class="input" type="password" placeholder=" " />
                 <label for="password" class="placeholder">Password</label>-->
-                {{ form.password(class_="input") }}
-                {{ form.password.label(class_="placeholder") }}
-            </div>
-            <p class="my-2" style="color: rgb(189, 189, 189)"><a href="{{url_for('login')}}"
-                style="text-decoration: none; color: inherit;">Already have an account? Sign in</a></p>
+                {{ form.password(class_="input", type_="password", id_="password") }}
+                {{ form.password.label(class_="placeholder", for_="password") }}
+                
+                <meter max="4" id="password-strength-meter"></meter>
+                <p id="password-strength-text" class="feedback"></p>
+
+            </div><br>
+
             <!--<button class="btn-override">SUBMIT</button>-->
                 {{ form.submit(class_="btn-override") }}
+                <p class="my-2" style="color: rgb(189, 189, 189)"><a href="{{url_for('login')}}"
+                    style="text-decoration: none; color: inherit;">Already have an account? Sign in</a></p>
         </div>
         </form>
     </div>
+    <script src="{{url_for('static', filename='register/js/script.js')}}"></script>
 </body>
 
 </html>
