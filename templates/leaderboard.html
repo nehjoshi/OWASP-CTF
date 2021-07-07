@@ -31,7 +31,7 @@
 
     <div class="header container-fluid">
         <div class="go-back" >
-            <a href="{{url_for('home_page')}}" style="text-decoration: none; color: inherit">
+            <a href="{{url_for('timer')}}" style="text-decoration: none; color: inherit">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back</span></a>
         </div>
@@ -65,17 +65,17 @@
                         {{ i+1 }}</td>
                     <td class="to-center">
                         {% if i==0 %}
-                        <img src="{{url_for('static', filename='leaderboard/images/crown.png')}}" style="height: 40px;">
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% elif i==1 %}
-                        <img src="{{url_for('static', filename='leaderboard/images/second.jpg')}}" style="height: 40px;">
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% elif i==2 %}
-                        <img src="{{url_for('static', filename='leaderboard/images/third.jpg')}}" style="height: 40px;">
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% elif i==3 %}
-                        <img src="{{url_for('static', filename='leaderboard/images/trophy_gold.jpg')}}" style="height: 40px;">
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% elif i==4 %}
-                        <img src="{{url_for('static', filename='leaderboard/images/trophy_silver.png')}}" style="height: 40px;">
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% elif i==5 %}
-                        <img src="{{url_for('static', filename='leaderboard/images/trophy_bronze.png')}}" style="height: 40px;">
+                        <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% else %}
                         <i class="fas fa-chess-knight" style=" font-size: 1.8rem; color: rgb(151, 151, 149)"></i>
                         {% endif %}

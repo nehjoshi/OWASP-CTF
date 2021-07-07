@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='timer/css/styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='challenge/css/styles.css') }}">
     <script>
-    window.addEventListener( "pageshow", function ( event ) {
-    var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
-    if ( historyTraversal ) {
-        window.location.reload();
-    }
-    });
+        window.addEventListener("pageshow", function (event) {
+            var historyTraversal = event.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2);
+            if (historyTraversal) {
+                window.location.reload();
+            }
+        });
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
 
             <div class="col-lg-1 my-4 links">
                 <i class="fas fa-user" style="margin-top: 10px; margin-left: 20px" onClick="modalControl()"></i>
-                <span class="nav-link" style="margin-top: -30px;" onClick="modalControl()">{{ session.uname }}</span>
+                <span class="nav-link no-hover" style="margin-top: -30px;" onClick="modalControl()">{{ session.uname }}</span>
             </div>
             <div class="col-lg-1 my-4 links ">
                 <a href="{{url_for('leaderboard')}}" style="text-decoration: none; color: inherit;"><span
@@ -59,9 +59,9 @@
                 <p style="display: inline;">{{ session.uname }}</p>
                 <a href="{{url_for('leaderboard')}}" style="text-decoration: none; color: inherit;">
                     <p style="width: fit-content; margin-top: 15px;">Leaderboard</p>
-                <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;">
-                    <p style="width: fit-content; ">Log Out</p>
-                </a>
+                    <a href="{{url_for('login')}}" style="text-decoration: none; color: inherit;">
+                        <p style="width: fit-content; ">Log Out</p>
+                    </a>
             </div>
         </div>
     </div>
@@ -92,18 +92,22 @@
                 </ul>
             </div>
             <div class="row">
-                <a href="{{url_for('challenge')}}" style="text-decoration: none; color: inherit; width: fit-content;" class="mx-auto">
-                    <button class="button">Challenges</button>
-                </a>
+                <h5 class="text-center mx-auto  my-4">Challenge Will Be Live on the 23rd of July at 12:00PM!</h5><br>
+
+            </div>
+            <div class="row">
+                <h5 class="text-center mx-auto my-4" style="color: rgb(110, 110, 212)"><a
+                        href="https://discord.gg/owasp" target="_blank" style="color: inherit">Join us on Discord for updates!</a></h5><br>
+
             </div>
 
-          </div>
-      </div>
-          <div id='stars'></div>
-          <div id='stars2'></div>
-          <div id='stars3'></div>
-           
-            
+        </div>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+
 
 
 

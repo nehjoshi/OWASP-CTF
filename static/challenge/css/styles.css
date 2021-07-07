@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.no-hover:hover {
+  cursor: auto !important;
+}
+
 .links {
   z-index: 100;
   margin-left: 40px;
@@ -181,10 +185,6 @@
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
   background-color: rgba(0, 0, 0, 0.7);
-}
-
-.fa-user:hover {
-  cursor: pointer;
 }
 
 .modal-box {
