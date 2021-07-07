@@ -19,6 +19,9 @@
         <form method="POST" action="/register">
         <div class="form">
             <div class="subtitle text-center mx-auto d-block">Register To Get Started</div>
+            {% if flag.weak==True %}
+            <p style="color:red">Password is weak. Please try again</p>
+            {% endif %}
             {% if flag.uname_exists==True %}
             <p style="color:red">Username already exists. <br> Please try using different username.</p>
             {% endif %}
@@ -27,7 +30,7 @@
             {% endif %}
             {% if "registered" in flag.keys() %}
             {% if flag.registered==0 %}
-            <p style="color:red">The email ID already exists</p>
+            <p style="color:red">The email ID already exists<br>Or Invalid email ID</p>
             {% endif %}
             {% endif %}
             <div class="input-container ic1">
