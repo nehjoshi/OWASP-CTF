@@ -112,3 +112,21 @@ function handleVerifyEmail(auth, actionCode, continueUrl, lang) {
       // again.
     });
   }
+
+  let btnOn = document.getElementById("submit");
+  let btnOff = document.getElementById("submit_disabled");
+  let ele = document.getElementById("new_password");
+  btnOn.style.display = "none";
+  btnOff.style.display = "flex";
+  ele.addEventListener('input', () => {
+      console.log('called');
+      let result = zxcvbn(ele.value).score
+      if (result > 2) {
+          btnOn.style.display = "flex";
+          btnOff.style.display = "none";
+      }
+      else {
+          btnOn.style.display = "none";
+          btnOff.style.display = "flex";
+      }
+  })

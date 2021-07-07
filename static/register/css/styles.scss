@@ -213,3 +213,10 @@ meter[value="4"]::-moz-meter-bar { background: green; }
     width: 90%;
   }
 }
+#submit_disabled{
+  filter: brightness(0.4);
+  &:hover {
+    background-color: rgb(238, 236, 236);
+    cursor: auto !important;
+  }
+}

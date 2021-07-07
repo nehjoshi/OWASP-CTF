@@ -270,4 +270,14 @@ meter[value="4"]::-moz-meter-bar {
     width: 90%;
   }
 }
+
+#submit_disabled {
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4);
+}
+
+#submit_disabled:hover {
+  background-color: #eeecec;
+  cursor: auto !important;
+}
 /*# sourceMappingURL=styles.css.map */

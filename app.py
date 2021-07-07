@@ -129,12 +129,12 @@ def login():
             return render_template('login.html', form=form,flag=flags)
     return render_template('login.html', form=form,flag=flags)
 
-@app.route('/challenge')
-def challenge():
-    if "uname" in session:
-        return render_template('challenge.html') 
-    else:
-        return redirect("./") 
+# @app.route('/challenge')
+# def challenge():
+#     if "uname" in session:
+#         return render_template('challenge.html') 
+#     else:
+#         return redirect("./") 
 
 @app.route('/timer')
 def timer():
